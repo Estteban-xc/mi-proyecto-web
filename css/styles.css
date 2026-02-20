@@ -1,1 +1,234 @@
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+/* ===== VARIABLES ===== */
+:root{
+    --bg:#f4f6f8;
+    --text:#222;
+    --card:#ffffff;
+    --primary:#c2c2c2;
+    --border:#dddddd;
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark{
+    --bg:#121212;
+    --text:#f1f1f1;
+    --card:#1e1e1e;
+    --border:#333;
+}
+
+/* ===== BODY ===== */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    background:var(--bg);
+    color:var(--text);
+    transition:background .3s, color .3s;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+header{
+    background:#111;
+    background-image:linear-gradient(to right,#111,#222);
+    color:white;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.3);
+    position:relative;
+    z-index:10;
+}
+
+.header-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1000px;
+    margin:auto;
+}
+
+/* ===== TITULOS ===== */
+h1{
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+h2, h3{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+/* ===== BOTON DARK MODE ===== */
+#darkModeBtn{
+    background:var(--primary);
+    color:white;
+    border:2px solid white;
+    border-radius:8px;
+    padding:8px 14px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:all .2s;
+}
+
+#darkModeBtn:hover{
+    transform:scale(1.05);
+    opacity:.9;
+}
+
+#darkModeBtn:active{
+    transform:scale(.95);
+}
+
+/* ===== LOGO ===== */
+.logo{
+    width:130px;
+    height:auto;
+    margin:15px auto;
+    display:block;
+}
+
+/* ===== NAV ===== */
+nav ul{
+    list-style-type:none;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:6px 10px;
+    border-radius:6px;
+    transition:background .2s;
+}
+
+nav a:hover{
+    background:var(--primary);
+}
+
+nav a:focus{
+    outline:2px solid white;
+}
+
+/* ===== MAIN ===== */
+main{
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* ===== TARJETAS ===== */
+section, article, aside{
+    background:var(--card);
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    border-width:1px;
+    border-style:solid;
+    border-color:var(--border);
+}
+
+/* ===== LINKS ===== */
+a{
+    color:#0077cc;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* ===== FORMULARIO IMC ===== */
+form{
+    margin-top:15px;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:1px solid var(--border);
+    border-radius:6px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#0077cc;
+}
+
+button{
+    margin-top:15px;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#0077cc;
+    color:white;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+/* ===== RESULTADO IMC ===== */
+.resultado{
+    margin-top:15px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* ===== LISTAS ===== */
+ol{
+    list-style-type:decimal;
+    padding-left:20px;
+}
+
+ul{
+    list-style-type:disc;
+    padding-left:20px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+    position:relative;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:700px){
+
+    .header-top{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav ul{
+        flex-direction:column;
+    }
+
+    .logo{
+        width:100px;
+    }
+}
