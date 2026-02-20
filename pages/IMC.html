@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <title>STRNG | Calculadora IMC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="icon" href="../assets/images/simbolo.png" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>STRNG</h1>
+        <p>Entrenamiento, nutrición y salud en el gimnasio</p>
+
+       
+        <button id="darkModeBtn">Modo oscuro</button>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="rutinas.html">Rutinas</a></li>
+                <li><a href="#">Alimentación</a></li>
+                <li><a href="#">Suplementación</a></li>
+                <li><a href="#">Implementos de GYM</a></li>
+                <li><a href="IMC.html">Calcula tu IMC</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Calculadora de Índice de Masa Corporal (IMC)</h2>
+
+            <p>
+                Ingresa tu peso y altura para conocer tu estado corporal.
+            </p>
+
+            <form id="imcForm">
+
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" step="0.1" placeholder="Ej: 70" required>
+
+                <label for="altura">Altura (m)</label>
+                <input type="number" id="altura" step="0.01" placeholder="Ej: 1.75" required>
+
+                <button type="submit">Calcular IMC</button>
+
+            </form>
+
+            <p class="resultado" id="resultado"></p>
+        </section>
+
+        <aside>
+            <h3>Tabla de referencia</h3>
+            <ul>
+                <li>Bajo peso: &lt; 18.5</li>
+                <li>Normal: 18.5 – 24.9</li>
+                <li>Sobrepeso: 25 – 29.9</li>
+                <li>Obesidad: ≥ 30</li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 STRNG | Vida saludable </p>
+    </footer>
+
+    
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
