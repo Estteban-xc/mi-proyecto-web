@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../assets/images/simbolo.png" type="image/png">
   <link rel="stylesheet" href="../css/styles.css">
-
 </head>
 <body>
 
@@ -66,13 +65,12 @@
   <div class="section-block">
     <div class="container">
 
-      <!-- TEMA 11: FLOAT — imagen flotante a la izquierda del texto intro -->
       <div class="contact-intro fade-in">
         <img
-          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=340&q=80"
+          src="../assets/images/contacto.png"
           alt="Entrenador STRNG"
           class="contact-float-img"
-          onerror="this.src='https://placehold.co/340x240/1a1a1a/555?text=STRNG'"
+          onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=340&q=80'"
         >
         <p>
           En <strong style="color:var(--red);">STRNG</strong> creemos que cada persona necesita un punto de partida diferente.
@@ -88,14 +86,12 @@
           La información que nos des nos ayuda a darte una respuesta más precisa y útil.
           Todo es confidencial — solo la usamos para asesorarte mejor.
         </p>
-        <!-- clearfix para que el contenedor envuelva el float -->
         <div style="clear:both;"></div>
       </div>
 
-      <!-- TEMA 12: CENTRADO — layout centrado con max-width propio -->
       <div class="contact-layout fade-in">
 
-        <!-- FORMULARIO DE CONTACTO (Tema 16) -->
+        <!-- FORMULARIO DE CONTACTO -->
         <div class="contact-form-wrap">
           <span class="section-label">// Formulario de Asesoría</span>
           <h2 style="font-family:'Bebas Neue',sans-serif; font-size:2rem; letter-spacing:4px; color:var(--text); margin-bottom:28px; line-height:1;">
@@ -192,7 +188,6 @@
               </label>
             </div>
 
-            <!-- Mensaje de respuesta -->
             <div id="formMsg" class="form-msg" style="display:none;"></div>
 
             <button type="submit" class="btn btn-primary contact-submit">
@@ -226,39 +221,34 @@
             <p>Revisamos cada consulta con atención. Te respondemos con detalle, no con respuestas automáticas.</p>
           </div>
 
+          <!-- VIDEO YOUTUBE -->
+          <div style="margin-top:28px;">
+            <span class="section-label">// Conoce nuestro enfoque</span>
+            <h3 style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:3px; color:var(--text); margin:10px 0 14px; line-height:1;">
+              FILOSOFÍA STRNG
+            </h3>
+            <div class="video-iframe-wrap">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/pZE3a4Lwq1Q"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <p style="color:var(--text3); font-size:0.78rem; margin-top:8px; font-family:'Barlow Condensed',sans-serif; letter-spacing:1px;">
+              Un vistazo a la mentalidad detrás del entrenamiento de calidad.
+            </p>
+          </div>
 
-          <!-- TEMA 17: IFRAME — video de YouTube embebido -->
-<div style="margin-top:28px;">
-  <span class="section-label">// Conoce nuestro enfoque</span>
-
-  <h3 style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:3px; color:var(--text); margin:10px 0 14px; line-height:1;">
-    FILOSOFÍA STRNG
-  </h3>
-
-  <div class="video-iframe-wrap">
-    <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube-nocookie.com/embed/pZE3a4Lwq1Q"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
-  </div>
-
-  <p style="color:var(--text3); font-size:0.78rem; margin-top:8px; font-family:'Barlow Condensed',sans-serif; letter-spacing:1px;">
-    Un vistazo a la mentalidad detrás del entrenamiento de calidad.
-  </p>
-</div>
-
-        
         </aside>
       </div>
     </div>
   </div>
 
-  <!-- TEMA 19: COLUMNAS DE TEXTO — sección FAQ -->
+  <!-- FAQ -->
   <div class="section-block" style="background:var(--bg2);">
     <div class="container">
       <span class="section-label">// Preguntas Frecuentes</span>
@@ -303,19 +293,35 @@
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand"><span class="logo-text">STRNG</span><p>Sin excusas, sin atajos.</p></div>
-    <div class="footer-col"><h4>Páginas</h4><ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="rutinas.html">Rutinas</a></li>
-      <li><a href="alimentacion.html">Alimentación</a></li>
-      <li><a href="suplementacion.html">Suplementación</a></li>
-      <li><a href="implementos.html">Implementos GYM</a></li>
-      <li><a href="IMC.html">Calculadora IMC</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Contacto</h4><ul>
-      <li><a href="/cdn-cgi/l/email-protection#6f0c00011b0e0c1b002f1c1b1d010809061b410c0002"><span class="__cf_email__" data-cfemail="25464a4b514446514a655651574b42434c510b464a48">[email&#160;protected]</span></a></li>
-    </ul></div>
+    <div class="footer-brand">
+      <span class="logo-text">STRNG</span>
+      <p>Sin excusas, sin atajos.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="rutinas.html">Rutinas</a></li>
+        <li><a href="alimentacion.html">Alimentación</a></li>
+        <li><a href="suplementacion.html">Suplementación</a></li>
+        <li><a href="implementos.html">Implementos GYM</a></li>
+        <li><a href="IMC.html">Calculadora IMC</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="mailto:contacto@strngfit.com">contacto@strngfit.com</a></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 STRNG. Todos los derechos re<script src="../js/script.js"></script>
+    <p>&copy; 2026 STRNG. Todos los derechos reservados.</p>
+    <p>Hecho para los que no se rinden.</p>
+  </div>
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
