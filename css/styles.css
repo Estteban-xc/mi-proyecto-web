@@ -784,6 +784,19 @@ body.light .hero-bg-text { color: rgba(0,0,0,0.03); }
   color: var(--text3);
 }
 
+/* ── TEMA 24: SVG — ícono decorativo hero ── */
+.hero-svg-dumbbell {
+  width: clamp(80px, 14vw, 140px);
+  height: auto;
+  color: var(--red);
+  opacity: 0.85;
+  margin-bottom: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(0 0 8px var(--red-glow));
+}
+
 /* ══════════════════════════════════════════════════
    INFO BOXES / ASIDE
 ═══════════════════════════════════════════════════ */
@@ -1215,4 +1228,63 @@ a:hover { color: var(--red-bright); }
   justify-content: center;
   transition: border-color 0.2s, color 0.2s;
   backdrop-filter: blur(8px);
+}
+/* ── TEMA 27: Contenido editable — Mis notas ── */
+.notes-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.notes-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.notes-hint {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  color: var(--text3);
+  text-transform: uppercase;
+}
+.notes-clear-btn {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--text3);
+  padding: 5px 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.notes-clear-btn:hover {
+  border-color: var(--red);
+  color: var(--red-bright);
+}
+.notes-editable {
+  width: 100%;
+  min-height: 160px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 20px 24px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.7;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  cursor: text;
+}
+.notes-editable:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px var(--red-dim);
+}
+.notes-editable:empty::before {
+  content: 'Escribe aquí tus observaciones, marcas personales o recordatorios...';
+  color: var(--text3);
+  pointer-events: none;
 }
