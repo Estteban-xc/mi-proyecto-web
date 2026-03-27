@@ -211,4 +211,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.imc-row').forEach(r => r.classList.remove('active-row'));
     const map = { low: imc < 18.5, normal: imc >= 18.5 && imc < 25, over: imc >= 25 && imc < 30, obese: imc >= 30 };
-    docu<script src="../js/script.js"></script>
+    document.querySelectorAll('.imc-row').forEach(r => {
+      const cl = [...r.classList].find(c => map[c]);
+      if (cl && map[cl]) r.classList.add('active-row');
+    });
+  });
+});
+</script>
+<script src="../shared.js"></script>
+</body>
+</html>
