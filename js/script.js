@@ -236,4 +236,70 @@ if (bgAudio && audioBtn) {
     playing = !playing;
   });
 }
+  // ── AGENTE SECRETO STRNG ──────────────────────────────────────────
+  let condicion1_cumplida = false; // Usuario ingresó peso
+  let condicion2_cumplida = false; // Usuario ingresó altura
+  let condicion3_cumplida = false; // Usuario calculó su IMC
+  let agente_activado     = false; // Evita que se active más de una vez
+
+  function verificarMision() {
+    if (condicion1_cumplida && condicion2_cumplida && condicion3_cumplida && !agente_activado) {
+      agente_activado = true;
+
+      // 1. Cambiar el estilo del <h1> principal
+      const titulo = document.querySelector('h1');
+      if (titulo) {
+        titulo.style.backgroundColor = '#FFD700';
+        titulo.style.color           = '#000000';
+        titulo.style.padding         = '8px 16px';
+        titulo.style.borderRadius    = '6px';
+        titulo.style.transition      = 'all 0.5s ease';
+      }
+
+      // 2. Crear el párrafo secreto y colocarlo justo después del <h1>
+      const mensaje = document.createElement('p');
+      mensaje.textContent = 'Misión Cumplida: Agente DOM activado.';
+      mensaje.style.fontWeight  = 'bold';
+      mensaje.style.color       = '#15803d';
+      mensaje.style.marginTop   = '10px';
+      mensaje.style.fontSize    = '1rem';
+      mensaje.style.textAlign   = 'center';
+      mensaje.style.animation   = 'fadeIn 0.8s ease';
+
+      if (titulo && titulo.parentNode) {
+        titulo.parentNode.insertBefore(mensaje, titulo.nextSibling);
+      }
+    }
+  }
+
+  // Condición 1 — el usuario escribe algo en el campo de peso
+  const campoPeso = document.getElementById('peso');
+  if (campoPeso) {
+    campoPeso.addEventListener('input', function () {
+      if (this.value.trim() !== '') {
+        condicion1_cumplida = true;
+        verificarMision();
+      }
+    });
+  }
+
+  // Condición 2 — el usuario escribe algo en el campo de altura
+  const campoAltura = document.getElementById('altura');
+  if (campoAltura) {
+    campoAltura.addEventListener('input', function () {
+      if (this.value.trim() !== '') {
+        condicion2_cumplida = true;
+        verificarMision();
+      }
+    });
+  }
+
+  // Condición 3 — el usuario envía el formulario (clic en CALCULAR IMC)
+  const formulario = document.getElementById('imcForm');
+  if (formulario) {
+    formulario.addEventListener('submit', function () {
+      condicion3_cumplida = true;
+      verificarMision();
+    });
+  }
 });
