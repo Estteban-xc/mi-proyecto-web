@@ -312,6 +312,154 @@ Endpoint utilizado: `https://formspree.io/f/xwvwprjb`
 
 ---
 
+## Lógica de activación: “Agente Secreto del DOM”
+
+En la página se implementó un script que añade una interacción oculta basada en las acciones del usuario. Esta lógica funciona como una pequeña “misión” que se activa únicamente cuando se cumplen tres condiciones específicas relacionadas con el cálculo del IMC.
+
+---
+
+### Propósito
+
+El objetivo de este script es monitorear la interacción del usuario y reaccionar automáticamente cuando:
+
+1. Se ingresa el peso
+2. Se ingresa la altura
+3. Se realiza el cálculo del IMC (envío del formulario)
+
+No importa el orden en que ocurran estas acciones. Una vez las tres han sucedido, se activa un cambio visual en la página.
+
+---
+
+### Manejo del estado
+
+Para controlar el flujo de la lógica, se utilizan variables booleanas que representan el estado de cada condición:
+
+```js
+let condicion1_cumplida = false;
+let condicion2_cumplida = false;
+let condicion3_cumplida = false;
+let agente_activado = false;
+```
+
+* Cada variable pasa de `false` a `true` cuando el usuario cumple una condición.
+* La variable `agente_activado` se usa para evitar que la acción final se ejecute más de una vez.
+
+---
+
+### Detección de acciones del usuario
+
+El script escucha eventos específicos en los elementos del formulario:
+
+* En los campos de entrada (`input`), se detecta cuando el usuario escribe.
+* En el formulario (`submit`), se detecta cuando el usuario realiza el cálculo del IMC.
+
+Ejemplo simplificado:
+
+```js
+campoPeso.addEventListener('input', function () {
+  if (this.value.trim() !== '') {
+    condicion1_cumplida = true;
+    verificarMision();
+  }
+});
+```
+
+Cada vez que ocurre una interacción válida, se actualiza el estado correspondiente y se llama a la función de verificación.
+
+---
+
+### Verificación de la misión
+
+La función `verificarMision` se encarga de comprobar si todas las condiciones se han cumplido:
+
+```js
+function verificarMision() {
+  if (condicion1_cumplida && condicion2_cumplida && condicion3_cumplida && !agente_activado) {
+    agente_activado = true;
+
+    // Se ejecutan los cambios en la página
+  }
+}
+```
+
+Esta función se ejecuta múltiples veces, pero solo realiza cambios cuando:
+
+* Las tres condiciones son verdaderas
+* La misión no ha sido activada previamente
+
+---
+
+### Cambios en la interfaz
+
+Cuando la misión se cumple, el script modifica el contenido de la página de forma dinámica.
+
+#### 1. Actualización del título principal
+
+Se selecciona el elemento `<h1>` y se modifican sus estilos:
+
+* Se aplica un fondo dorado (`#FFD700`)
+* Se cambia el color del texto a negro (`#000000`)
+
+Esto sirve como indicador visual inmediato de que la misión fue completada.
+
+---
+
+#### 2. Creación de un mensaje dinámico
+
+Se genera un nuevo elemento `<p>` con el siguiente contenido:
+
+```
+Misión Cumplida: Agente DOM activado.
+```
+
+A este elemento se le aplican estilos para destacarlo:
+
+* Texto en negrita
+* Color verde oscuro (`#15803d`)
+* Margen superior para separación visual
+
+---
+
+#### 3. Inserción en el DOM
+
+El nuevo mensaje no reemplaza contenido existente, sino que se inserta justo después del título principal:
+
+```js
+titulo.parentNode.insertBefore(mensaje, titulo.nextSibling);
+```
+
+Esto asegura que el mensaje aparezca en una posición visible y coherente dentro de la estructura de la página.
+
+---
+
+### Resultado final
+
+Cuando el usuario completa las tres acciones:
+
+* El título principal cambia su apariencia
+* Aparece un mensaje indicando que la misión ha sido completada
+* Todo ocurre automáticamente
+* La acción solo se ejecuta una vez, incluso si el usuario sigue interactuando
+
+---
+
+### Conceptos clave demostrados
+
+Este script pone en práctica varios conceptos fundamentales de JavaScript y manipulación del DOM:
+
+* Gestión de estado con variables booleanas
+* Uso de eventos (`input` y `submit`)
+* Manipulación de estilos desde JavaScript
+* Creación dinámica de elementos HTML
+* Inserción de nodos en el DOM
+* Control de ejecución única mediante condiciones
+
+---
+
+Este tipo de lógica es común en interfaces modernas donde se requiere responder a múltiples acciones del usuario antes de ejecutar un cambio en la aplicación.
+
+---
+
 ## Autor
 
 -Esteban Varela
